@@ -1,2 +1,224 @@
-# AI-Powered-Lead-Generation-Automated-Outreach-System
-Form-driven B2B lead generation system with Apollo.io prospecting, seniority waterfall contact targeting, OpenAI email personalization, and Gmail draft automation. Processes 500–600 leads weekly. Saves 20–30 hours. 40% higher response rates.
+# AI-Powered Lead Generation & Automated Outreach System
+### 500–600 Qualified Leads Weekly. AI-Personalized. Human-Approved.
+
+<div align="center">
+
+![Type](https://img.shields.io/badge/Type-Internal%20Sales%20Tool-%233A7CFF?style=for-the-badge)
+&nbsp;
+![Leads](https://img.shields.io/badge/Processes-500–600%20Leads%2FWeek-%2300C853?style=for-the-badge)
+&nbsp;
+![Response](https://img.shields.io/badge/Response%20Rate-40%25%20Higher-%23FF6B35?style=for-the-badge)
+
+</div>
+
+<br/>
+
+---
+
+## What This Is
+
+An internal sales tool built for **ChatWalrus** — a form-driven, multi-stage lead generation and outreach system that takes an ICP definition and outputs AI-personalized Gmail drafts ready to send, with human approval gates at every critical step.
+
+The system handles everything between "here's who we want to target" and "here are the personalized emails ready to go" — without a human touching a spreadsheet, writing a single line of copy, or manually researching a single contact.
+
+<br/>
+
+---
+
+## The Problem
+
+Sales teams running outbound campaigns hit the same ceiling every week:
+
+- **Prospecting** — manually searching Apollo, building lists, verifying companies: 8–10 hours
+- **Decision-maker research** — finding the right contacts at each company: 5–8 hours
+- **Email writing** — personalizing messages for each prospect: 8–12 hours
+- **Duplicate prevention** — tracking who's already been contacted: ongoing overhead
+
+Total: **20–30 hours per week** on work that produces generic, low-response outreach.
+
+The root cause isn't effort — it's that the process is manual at every stage. Personalization at scale requires automation at scale.
+
+<br/>
+
+---
+
+## How the System Works
+
+The pipeline runs in three distinct stages, each with a human approval gate before moving forward.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    STAGE 1 — TARGETING                          │
+└─────────────────────────────────────────────────────────────────┘
+
+User fills form → ICP criteria submitted
+(Industry · Revenue range · Company size · Geography)
+         │
+         ▼
+Apollo.io company search triggered
+         │
+         ▼
+Results populate Google Sheet (Approval Sheet 1)
+         │
+         ▼
+    ✅ Human reviews and approves target companies
+         │
+         ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    STAGE 2 — CONTACT FINDING                    │
+└─────────────────────────────────────────────────────────────────┘
+
+Approved companies trigger Apollo.io people search
+         │
+         ▼
+Seniority waterfall logic applied:
+  Priority 1 → CEO / Founder / Co-Founder        (first 5 contacts)
+  Priority 2 → VP / Director / Head of           (if P1 < 5 found)
+  Priority 3 → Manager / Senior Manager          (if P2 < 5 found)
+         │
+         ▼
+Contacts populate Google Sheet (Approval Sheet 2)
+         │
+         ▼
+    ✅ Human reviews and approves contacts
+         │
+         ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                    STAGE 3 — OUTREACH                           │
+└─────────────────────────────────────────────────────────────────┘
+
+Approved contacts trigger AI personalization
+         │
+         ▼
+AI agent pulls email template from template library
+         │
+         ▼
+OpenAI personalizes each email:
+  - Company-specific context
+  - Role-appropriate messaging
+  - Pain point alignment to ICP criteria
+         │
+         ▼
+Gmail drafts auto-generated (one per contact)
+         │
+         ▼
+    ✅ Human reviews drafts in Gmail → sends
+         │
+         ▼
+Sent tracking updates Google Sheet status
+Duplicate prevention flags contacted companies
+```
+
+<br/>
+
+---
+
+## Key Capabilities
+
+### Form-Driven ICP Input
+Sales reps define their ideal customer profile through a simple form — no spreadsheet manipulation required. The form captures industry, revenue range, company size, and geography, and triggers the entire pipeline automatically.
+
+### Seniority Waterfall Logic
+The system doesn't just find any contact. It targets decision-makers using a priority hierarchy — always going for the highest seniority available per company, working down the ladder only when necessary, and capping at 5 contacts per company to avoid saturation.
+
+### Two-Stage Human Approval
+Every batch passes through two human review points:
+1. **Company approval** — confirm the companies are genuinely good fits before investing in contact research
+2. **Contact approval** — confirm the right people have been identified before generating personalized copy
+
+This keeps humans in control of strategy while automation handles the execution.
+
+### AI Email Personalization
+Each email draft is generated by an OpenAI agent that combines:
+- The approved template for this campaign
+- Company-specific research pulled from Apollo data
+- Role-specific messaging based on the contact's seniority
+- Pain point framing aligned to the original ICP criteria
+
+The output is a personalized draft, not a mail merge.
+
+### Bulk Draft Management
+Sales reps can delete all drafts and regenerate in a single action — useful when templates change or a campaign needs to pivot mid-run. No manual cleanup required.
+
+### Duplicate Prevention
+Once a contact has been emailed, their status is updated in the tracking sheet. The system cross-references this on every new run — preventing the same prospect from receiving outreach twice.
+
+<br/>
+
+---
+
+## Results
+
+| Metric | Outcome |
+|---|---|
+| Qualified leads processed weekly | **500–600** |
+| Hours saved on prospecting and drafting | **20–30 hours/week** |
+| Response rate improvement | **40% higher** than generic outreach |
+| Manual spreadsheet work | **Zero** |
+| Duplicate outreach incidents | **Zero** |
+| Human approval gates | **2 per campaign run** |
+| Decision-maker targeting accuracy | **Seniority waterfall — always highest first** |
+
+<br/>
+
+---
+
+## Tech Stack
+
+| Layer | Tool | Purpose |
+|---|---|---|
+| **Orchestration** | n8n | Pipeline automation and stage routing |
+| **ICP Input** | Form (n8n or external) | User-defined targeting criteria |
+| **Company Search** | Apollo.io | ICP-matched company discovery |
+| **Contact Search** | Apollo.io | Decision-maker identification |
+| **Approval Layer** | Google Sheets | Two-stage human review and approval |
+| **AI Personalization** | OpenAI | Email draft generation per contact |
+| **Email Platform** | Gmail API | Draft creation and sent tracking |
+| **Template Library** | Google Sheets | Campaign template management |
+| **Duplicate Control** | Google Sheets | Outreach status tracking |
+
+<br/>
+
+---
+
+## Repository Structure
+
+```
+📁 ai-lead-gen-outreach-system/
+├── 📄 README.md
+├── 📁 workflow/
+│   └── lead-gen-outreach.json              ← n8n workflow export
+├── 📁 docs/
+│   ├── seniority-waterfall-logic.md        ← Contact targeting logic
+│   └── approval-sheet-schema.md            ← Google Sheets structure
+└── 📁 templates/
+    └── email-prompt-template.md            ← OpenAI personalization prompt
+```
+
+<br/>
+
+---
+
+## Built by Trilles AI
+
+This system was designed and delivered by **[Awais Ali](https://www.linkedin.com/in/awais-ali-tillesai)**, CEO & Co-Founder of **[Trilles AI](https://www.trillesai.com)**.
+
+If your sales team is burning 20–30 hours a week on prospecting and writing emails that don't convert — this is exactly what we build.
+
+<div align="center">
+
+[![Connect on LinkedIn](https://img.shields.io/badge/Connect%20on%20LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/awais-ali-tillesai)
+&nbsp;
+[![Visit Trilles AI](https://img.shields.io/badge/Visit%20Trilles%20AI-%233A7CFF?style=for-the-badge&logoColor=white)](https://www.trillesai.com)
+&nbsp;
+[![Email](https://img.shields.io/badge/Email%20Me-%23EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:letsautomatewithawais@gmail.com)
+
+</div>
+
+<br/>
+
+---
+
+<div align="center">
+<sub>Built with precision · Powered by Trilles AI · <code>www.trillesai.com</code></sub>
+</div>
